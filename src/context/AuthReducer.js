@@ -1,11 +1,19 @@
-const  AuthReducer=(state,action)=>{
-    switch(action.type){
-        case 'LOGIN_SUCCESS':
-            return {
-              ...state,
-              user: action.payload,
-              isAuthenticated: true,
-    };
+export const AuthReducer = (state, action) => {
+    
+    if (!action) {
+    console.error("Missing action in AuthReducer");
+    return state;
+  }
+    
+    switch(action.type) {
+      case 'LOGIN_SUCCESS':
+        return {
+          ...state,
+          user: action.payload,
+          isAuthenticated: true
+        };
+      // ... autres cas ...
+    
     case 'LOGOUT':
         return {
             ...state,
@@ -24,7 +32,7 @@ const  AuthReducer=(state,action)=>{
       return state;
   }
 };
-export default AuthReducer;
+
 
 
 

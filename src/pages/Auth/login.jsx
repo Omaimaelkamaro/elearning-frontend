@@ -1,16 +1,16 @@
 // McgPr7oX7v1mMcbN
 import { Button } from "@/components/ui/button";
-import { Card, CardContent,CardDescription,CardFooter,CardHeader,CardTitle,} from "@/components/ui/card";
+import { Card, CardContent,CardFooter,CardHeader,CardTitle,} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent} from "@/components/ui/tabs";
 import { Loader2 } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import { useContext } from "react";
 import { AuthContext } from "@/context/AuthContext"; 
-import api from "@/services/api"; 
+import api from "@/service/api"; 
 
 const Login = () => {
  
@@ -35,7 +35,7 @@ const handleLogin  = async () => {
       setIsLoading(true);
     setIsLoading(true);
     try {
-      const response = await api.post("/user/login", loginInput); // URL relative ici
+      const response = await api.post("/login", loginInput); // URL relative ici
       const data = response.data;
   
       toast.success(data.message || "Login successful");

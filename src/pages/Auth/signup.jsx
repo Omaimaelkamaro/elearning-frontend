@@ -5,13 +5,13 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Loader2 } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import { useContext } from "react";
 import { AuthContext } from "@/context/AuthContext"; 
-import api from "@/services/api"; 
-const SignUp = () => {
+import api from "@/service/api"; 
+const Signup = () => {
   const [signupInput, setSignupInput] = useState({
     name: "",
     email: "",
@@ -31,7 +31,7 @@ const navigate = useNavigate();
       const handleRegistration = async () => {
         setIsLoading(true);
         try {
-          const response = await api.post("/users/register", signupInput); 
+          const response = await api.post("/register", signupInput); 
           const data = response.data;
       
           toast.success(data.message || "Signup successful");
@@ -53,7 +53,7 @@ const navigate = useNavigate();
 
   return (
     <div className="flex items-center w-full justify-center mt-20">
-      <Tabs defaultValue="login" className="w-[400px]">
+      <Tabs defaultValue="signup" className="w-[400px]">
         <TabsContent value="signup">
           <Card>
             <CardHeader>
@@ -96,6 +96,17 @@ const navigate = useNavigate();
                   required
                 />
               </div>
+              <div className="space-y-1">
+                <Label htmlFor="Password Confirmation">Confirm Password</Label>
+                <Input
+                 type="password"
+                 name="password_confirmation"
+                 value={signupInput.password_confirmation}
+                 onChange={handleChange}
+                 placeholder="Confirm your password"
+                required
+               />
+             </div>
             </CardContent>
             <CardFooter>
               <Button
@@ -120,4 +131,4 @@ const navigate = useNavigate();
   );
 };
 
-export default SignUp;
+export default Signup;
