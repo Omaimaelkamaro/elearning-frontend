@@ -13,5 +13,8 @@ export default defineConfig({
       '@': path.resolve(__dirname, 'src'), // ← alias vers src
     },
   },
+  optimizeDeps: {
+    include: ['tailwindcss'],
+  },
 })
 
