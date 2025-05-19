@@ -1,22 +1,28 @@
-// McgPr7oX7v1mMcbN
 import { Button } from "@/components/ui/button";
-import { Card, CardContent,CardFooter,CardHeader,CardTitle,} from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Tabs, TabsContent} from "@/components/ui/tabs";
+import { Tabs, TabsContent } from "@/components/ui/tabs";
 import { Loader2 } from "lucide-react";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
-import { useContext } from "react";
-import { AuthContext } from "@/context/AuthContext"; 
-import api from "@/service/api"; 
+import { AuthContext } from "@/context/AuthContext";
+import api from "@/service/api";
+import { useTranslation } from "react-i18next";
 
 const Login = () => {
- 
+  const { t, i18n } = useTranslation();
+  const language = i18n.language;
+
   const [loginInput, setLoginInput] = useState({ email: "", password: "" });
   const [isLoading, setIsLoading] = useState(false);
-
   const { dispatch } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -24,32 +30,35 @@ const Login = () => {
     const { name, value } = e.target;
     setLoginInput((prev) => ({ ...prev, [name]: value }));
   };
-    
 
-const handleLogin  = async () => {
+  const handleLogin = async () => {
     if (!loginInput.email || !loginInput.password) {
-        toast.error("Please fill in both email and password");
-        return;
-      }
-    
-      setIsLoading(true);
+      toast.error(t("login.fillAllFields"));
+      return;
+    }
+
     setIsLoading(true);
     try {
-      const response = await api.post("/login", loginInput); // URL relative ici
+      const response = await api.post("/login", loginInput);
       const data = response.data;
-  
-      toast.success(data.message || "Login successful");
-  
+
+      toast.success(data.message || t("login.success"));
       dispatch({ type: "LOGIN_SUCCESS", payload: data.user });
       localStorage.setItem("user", JSON.stringify(data.user));
-      navigate("/dashboard");
+      if (data.user.role === "administrateur") {
+      navigate("/admin/profile");
+    }else if(data.user.role=="formateur")
+{
+  navigate("/formateur/profile");
+}else{
+  navigate("/user/profile");
+}
     } catch (error) {
-      toast.error(error.response?.data?.message || "Login failed");
+      toast.error(error.response?.data?.message || t("login.failed"));
     } finally {
       setIsLoading(false);
     }
   };
-
 
   return (
     <div className="flex items-center w-full justify-center mt-20">
@@ -57,44 +66,41 @@ const handleLogin  = async () => {
         <TabsContent value="login">
           <Card>
             <CardHeader>
-              <CardTitle>Login</CardTitle>
+              <CardTitle>{t("login.title")}</CardTitle>
             </CardHeader>
             <CardContent className="space-y-2">
               <div className="space-y-1">
-                <Label htmlFor="email">Email</Label>
+                <Label htmlFor="email">{t("login.email")}</Label>
                 <Input
                   type="email"
                   name="email"
                   value={loginInput.email}
                   onChange={handleChange}
-                  placeholder="Eg. patel@gmail.com"
+                  placeholder={t("login.emailPlaceholder")}
                   required
                 />
               </div>
               <div className="space-y-1">
-                <Label htmlFor="password">Password</Label>
+                <Label htmlFor="password">{t("login.password")}</Label>
                 <Input
                   type="password"
                   name="password"
                   value={loginInput.password}
                   onChange={handleChange}
-                  placeholder="Eg. xyz"
+                  placeholder={t("login.passwordPlaceholder")}
                   required
                 />
               </div>
             </CardContent>
             <CardFooter>
-              <Button
-                disabled={isLoading}
-                onClick={ handleLogin }
-              >
+              <Button disabled={isLoading} onClick={handleLogin}>
                 {isLoading ? (
                   <>
-                    <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Please
-                    wait
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    {t("login.loading")}
                   </>
                 ) : (
-                  "Login"
+                  t("login.button")
                 )}
               </Button>
             </CardFooter>
@@ -104,4 +110,5 @@ const handleLogin  = async () => {
     </div>
   );
 };
+
 export default Login;

@@ -64,3 +64,13 @@
     @apply bg-background text-foreground;
   }
 }
+html,
+body,
+#root {
+   margin: 0;
+  padding: 0;
+  height: 100%;
+}
+/* main {
+  padding-top: 100px; 
+} */

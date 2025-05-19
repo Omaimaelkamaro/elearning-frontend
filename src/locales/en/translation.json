@@ -1,0 +1,49 @@
+{
+  "logo": "Madrassa",
+  "explore": "Explore",
+  "exploreByCategory": "Explore by category",
+  "searchPlaceholder": "Search for anything...",
+  "languageFrench": "French",
+  "languageEnglish": "English",
+  "cart": "Cart",
+  "notifications": "Notifications",
+  "home": "Home",
+  "myLearning": "My learning",
+  "community": "Community",
+  "becomeInstructor": "Become an instructor",
+  "Instructor": "Instructor",
+  "profile": "Profile",
+  "logout": "Log out",
+ "signup": {
+  "title": "Signup",
+  "description": "Create a new account and click signup when you're done.",
+  "name": "Name",
+  "namePlaceholder": "Eg. patel",
+  "email": "Email",
+  "emailPlaceholder": "Eg. patel@gmail.com",
+  "password": "Password",
+  "passwordPlaceholder": "Eg. xyz",
+  "confirmPassword": "Confirm Password",
+  "confirmPasswordPlaceholder": "Confirm your password",
+  "button": "Signup",
+  "loading": "Please wait...",
+  "success": "Signup successful",
+  "failed": "Signup failed"
+},
+   "login": {
+    "title": "Login",
+    "email": "Email",
+    "emailPlaceholder": "example@gmail.com",
+    "password": "Password",
+    "passwordPlaceholder": "Password must be at least 8 characters",
+    "button": "Login",
+    "loading": "Please wait...",
+    "fillAllFields": "Please fill in both email and password",
+    "success": "Login successful",
+    "failed": "Login failed"
+  }
+}
+
+  
+
+

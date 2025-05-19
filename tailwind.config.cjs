@@ -2,7 +2,7 @@
 const animatePlugin = require('tailwindcss-animate');
 
 module.exports = {
-  darkMode: ["class"],
+  darkMode: "class",
   content: ["./index.html", "./src/**/*.{ts,tsx,js,jsx}"],
   theme: {
     extend: {
@@ -14,6 +14,7 @@ module.exports = {
       colors: {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
+        logoBlue: 'rgb(var(--logo-blue) / <alpha-value>)',
         card: {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))'
