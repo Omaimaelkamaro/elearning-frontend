@@ -13,10 +13,10 @@ import {
   Copyright
 } from "lucide-react";
 
-const Footer = () => {
+const Footer = ({ className = "" }) => {
   return (
-    <footer className="bg-secondary w-full py-12 mt-10">
-      <div className="container mx-auto px-4">
+    <footer className={`bg-secondary w-full py-12 ${className}`}>
+   <div className="px-[calc(170px+2rem)] lg:pl-[170px]"> 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Logo and description */}
           <div className="space-y-4">

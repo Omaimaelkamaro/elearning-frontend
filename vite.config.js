@@ -14,7 +14,9 @@ export default defineConfig({
     },
   },
   optimizeDeps: {
-    include: ['tailwindcss'],
+    include: ['tailwindcss','recharts', 'react-hook-form', '@hookform/resolvers/zod'],
+  
   },
+  
 })
 

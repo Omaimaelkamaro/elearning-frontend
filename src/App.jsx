@@ -5,9 +5,13 @@ import Signup from "./pages/Auth/signup";
 import Layout from "./layouts/Layout";
 import Profile from './pages/etudiant/profil/MonCompte';
 import Unauthorized from "@/pages/Unauthorized";
+import About from "@/pages/About";
+import ContactUs from "@/pages/Contact";
 import AdminLayout from "@/layouts/AdminLayout";
 import AdminRoute from "@/routes/AdminRoute";
 import PrivateRoute from "@/routes/PrivateRoute";
+import { Contact } from 'lucide-react';
+
 
 
 function App() {
@@ -26,10 +30,14 @@ function App() {
             </AdminRoute>
           }
         >
+
      <Route path="profile" element={<Profile />} />
+     {/* <Route path="dashboard" element={<Dashboard />} /> */}
         </Route>
           </Route>
         <Route path="/signup" element={<Signup />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<ContactUs />} />
          <Route path="/unauthorized" element={<Unauthorized />} />
         </Route>
 
