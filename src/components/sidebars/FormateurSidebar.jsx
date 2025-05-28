@@ -59,7 +59,7 @@ const Sidebar = () => {
       <div className="space-y-6 pt-2 p-5 overflow-hidden ">
         
         <Link 
-          to="/admin/dashboard" 
+          to="/formateur/dashboard" 
           className={cn(
             "flex items-center gap-3 hover:text-primary transition-colors",
             "p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800"
@@ -77,7 +77,7 @@ const Sidebar = () => {
         </Link>
         
         <Link 
-          to="/admin/cours" 
+          to="/formateur/cours" 
           className={cn(
             "flex items-center gap-3 hover:text-primary transition-colors",
             "p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800"

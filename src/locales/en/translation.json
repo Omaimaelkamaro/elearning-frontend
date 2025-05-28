@@ -28,7 +28,8 @@
   "button": "Signup",
   "loading": "Please wait...",
   "success": "Signup successful",
-  "failed": "Signup failed"
+  "failed": "Signup failed",
+ "Category":"Category"
 },
    "login": {
     "title": "Login",

@@ -27,7 +27,8 @@
   "button": "S'inscrire",
   "loading": "Veuillez patienter...",
   "success": "Inscription réussie",
-  "failed": "Échec de l'inscription"
+  "failed": "Échec de l'inscription",
+   "Category":"Catégorie"
 },
 
    "login": {
@@ -43,6 +44,7 @@
     "failed": "Échec de la connexion"
 
 
-}}
+}
+}
 
  

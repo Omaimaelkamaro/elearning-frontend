@@ -6,6 +6,7 @@ import { Send } from "lucide-react";
 import Footer from "../components/Footer";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import api from "@/service/api";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -36,6 +37,7 @@ const Contact = () => {
   });
 
   const onSubmit = (data) => {
+   api.post("/contact-us")
     console.log("Form data:", data);
     toast.success("Message envoyé avec succès! Nous vous contacterons bientôt.");
     form.reset();
@@ -62,7 +64,7 @@ const Contact = () => {
               {/* Texte à droite */}
               <div className="w-full md:w-1/2">
                 <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                  Contactez-nous
+                  {t("Contact.title")}
                 </h1>
                 <p className="text-lg text-gray-700 mb-6">
                   Vous avez des questions ou besoin d'aide ? Notre équipe est là pour vous

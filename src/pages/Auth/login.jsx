@@ -61,7 +61,7 @@ const Login = () => {
   };
 
   return (
-    <div className="flex items-center w-full justify-center mt-20">
+    <div className="flex items-center w-full justify-center mt-20 mb-20">
       <Tabs defaultValue="login" className="w-[400px]">
         <TabsContent value="login">
           <Card>
@@ -107,6 +107,7 @@ const Login = () => {
           </Card>
         </TabsContent>
       </Tabs>
+     
     </div>
   );
 };

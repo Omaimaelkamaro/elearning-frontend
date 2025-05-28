@@ -7,6 +7,8 @@ import "./i18n";
 
 import App from './App.jsx';
 import { AuthProvider } from './context/AuthContext';
+import { CourseProvider } from './context/Course/CourseContext.jsx';
+import Dashboard from './pages/admin/Dashboard.jsx';
 
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>

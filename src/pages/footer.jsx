@@ -20,7 +20,15 @@ const Footer = ({ className = "" }) => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Logo and description */}
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-primary">EduPlateforme</h2>
+            <h2 className="font-extrabold text-xl text-gray-800 dark:text-white">
+                            <span className="relative inline-block">
+                              Madrassa
+                              <GraduationCap
+                                size={14}
+                                className="absolute -top-2 left-0.5 text-indigo-500 dark:text-indigo-500"
+                              />
+                            </span>
+                            </h2>
             <p className="text-muted-foreground">
               Votre partenaire dans l'apprentissage en ligne, offrant des cours de qualité pour tous les niveaux.
             </p>
@@ -77,11 +85,11 @@ const Footer = ({ className = "" }) => {
             <ul className="space-y-2">
               <li className="flex items-center gap-2 text-muted-foreground">
                 <Mail size={16} />
-                <span>contact@eduplateforme.fr</span>
+                <span>contact@madrassa.fr</span>
               </li>
               <li className="flex items-center gap-2 text-muted-foreground">
                 <Phone size={16} />
-                <span>+33 1 23 45 67 89</span>
+                <span>+212 6 08 81 91 91</span>
               </li>
             </ul>
           </div>
@@ -91,7 +99,13 @@ const Footer = ({ className = "" }) => {
         <div className="border-t border-border mt-8 pt-8 flex justify-center items-center text-sm text-muted-foreground">
           <div className="flex items-center gap-1">
             <Copyright size={16} />
-            <span>{new Date().getFullYear()} EduPlateforme. Tous droits réservés.</span>
+            <span>{new Date().getFullYear()} <span className="relative inline-block">
+                              Madrassa
+                              <GraduationCap
+                                size={12}
+                                className="absolute -top-2 left-0.5 text-indigo-500 dark:text-indigo-500"
+                              />
+                            </span>. Tous droits réservés.</span>
           </div>
         </div>
       </div>
