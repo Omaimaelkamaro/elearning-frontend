@@ -8,8 +8,11 @@ import Unauthorized from "@/pages/Unauthorized";
 import About from "@/pages/About";
 import ContactUs from "@/pages/Contact";
 import AdminLayout from "@/layouts/AdminLayout";
+import FormateurLayout from "@/layouts/FormateurLayout";
 import AdminRoute from "@/routes/AdminRoute";
+import FormateurRoute from "@/routes/FormateurRoute";
 import PrivateRoute from "@/routes/PrivateRoute";
+
 import DevenirFormateur from './pages/etudiant/DevenirFormateur';
 import { FormateurDProvider } from './context/FormateurRequestContext';
 import EtudiantRoute from './routes/EtudiantRoute';
@@ -19,18 +22,47 @@ import { CourseProvider } from "@/context/Course/CourseContext";
 import MonApprentissage from "@/pages/etudiant/MonApprentissage";
 import AccueilCours from "@/pages/etudiant/AccueilCours";
 
+import Dashboard from './pages/admin/Dashboard';
+import CourseTable from './pages/admin/Course/CourseTable';
+import CourseTableF from './pages/formateur/Course/CourseTable';
+import AddCourse from './pages/admin/Course/AddCourse';
+import AddCourseF from './pages/formateur/Course/AddCourse';
+import EditCourse from './pages/admin/Course/EditCourse';
+import EditCourseF from './pages/formateur/Course/EditCourse';
+  
+import { UserProvider } from './context/User/UserContext';  
+import { CategoryProvider } from './context/Category/CategoryContext';
+import { FormateurProvider } from './context/Formateur/FormateurContext';
+import { ModuleProvider } from './context/Module/ModuleContext';
+import CreateModule from './pages/formateur/module/CreateModule';
+import EditModule from './pages/formateur/module/EditModule';
+import UsersTable from './pages/admin/users/UsersTable';
+import AddUser from './pages/admin/users/AddUser';
+
+
 function App() {
-  const token = localStorage.getItem('token');
-  const etudiantId = localStorage.getItem('etudiant_id');
+  
 
   return (
-    <Router>
-      <FormateurDProvider>
-         <CourseProvider>
+      
+         
                       <MonApprentissageProvider>
+                        <CategoryProvider>
+    <ModuleProvider>
+    <FormateurProvider >
+    <CourseProvider>
+    <UserProvider>
+      <Router>
         <Routes>
+      
+
+    
+       {/* Ajout ici */}
+        
           <Route element={<Layout />}>
-            <Route path="/" element={<Login />} />
+            <Route path="/" element={<Login />} /> 
+            
+
             <Route element={<PrivateRoute />}>
               <Route
                 path="/admin"
@@ -41,46 +73,47 @@ function App() {
                 }
               >
                 <Route path="profile" element={<Profile />} />
-                {/* <Route path="dashboard" element={<Dashboard />} /> */}
-              </Route>
+                <Route path="dashboard" element={<Dashboard />} />
+                <Route path="cours"element={<CourseTable />}/>
+                <Route path="cours/create"element={<AddCourse />}/>
+                
+                <Route path="cours/:id"element={<EditCourse />}/>
 
+
+                <Route path="users"element={<UsersTable/>}/>
+                <Route path="users/create"element={<AddUser />}/>
+              </Route>
               <Route
-                path="/etudiant"
+                path="/formateur"
                 element={
-                  <EtudiantRoute>
-                    <EtudiantLayout />
-                  </EtudiantRoute>
+                  <FormateurRoute>
+                    <FormateurLayout />
+                  </FormateurRoute>
                 }
               >
                 <Route path="profile" element={<Profile />} />
-                {/* <Route path="dashboard" element={<Dashboard />} /> */}
-                <Route path="devenir-formateur" element={<DevenirFormateur />} />
-                   <Route path="my-learning" element={ <MonApprentissage />
- }
-/>
-
-                {/* Ici on englobe uniquement la page MonApprentissage avec ses contextes */}
-             
+                <Route path="dashboard" element={<Dashboard />} />
+                <Route path="cours"element={<CourseTableF />}/>
+                <Route path="cours/create"element={<AddCourseF />}/>
+                <Route path="cours/:id"element={<EditCourseF />}/>
+                <Route path="cours/:id/module"element={<CreateModule />}/>
+                <Route path="cours/:id/module/:moduleId"element={<EditModule />}/>
               </Route>
             </Route>
-
             <Route path="/signup" element={<Signup />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<ContactUs />} />
-            <Route
-              path="/devenir-formateur"
-              element={<DevenirFormateur etudiantId={etudiantId} token={token} />}
-            />
-
-            <Route path="/homeSudent" element={<AccueilCours />} />
-
             <Route path="/unauthorized" element={<Unauthorized />} />
           </Route>
         </Routes>
-         </MonApprentissageProvider>
-                    </CourseProvider>
-      </FormateurDProvider>
-    </Router>
+      </Router>
+    </UserProvider>
+    </CourseProvider>
+    </FormateurProvider >
+    </ModuleProvider >
+    </CategoryProvider>
+   </MonApprentissageProvider>
+
   );
 }
 

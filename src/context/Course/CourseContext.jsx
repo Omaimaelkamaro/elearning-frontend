@@ -113,4 +113,7 @@ const publishCourse = async (id) => {
   );
 };
 
+
 export const useCourseContext = () => useContext(CourseContext);
+
+

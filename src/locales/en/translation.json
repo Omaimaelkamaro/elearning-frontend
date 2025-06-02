@@ -14,6 +14,11 @@
   "Instructor": "Instructor",
   "profile": "Profile",
   "logout": "Log out",
+   "Users": "Users",
+  "Courses": "Courses",
+  "Dashboard": "Dashboard",
+  "Paiement":"payments",
+  "Requests":"Requests",
  "signup": {
   "title": "Signup",
   "description": "Create a new account and click signup when you're done.",
@@ -28,7 +33,10 @@
   "button": "Signup",
   "loading": "Please wait...",
   "success": "Signup successful",
-  "failed": "Signup failed"
+  "failed": "Signup failed",
+ "Category":"Category"
+
+
 },
    "login": {
     "title": "Login",
@@ -42,70 +50,101 @@
     "success": "Login successful",
     "failed": "Login failed"
   },
-
-  "contact": {
-  "title": "Contact Us",
-  "description": "Do you have any questions or need help? Our team is here to assist you and respond to all your requests. Feel free to contact us, we will respond as soon as possible.",
-  "cta": "We're happy to hear from you! ",
-  "formTitle": "Send us a message",
-  "name": "Name",
-  "namePlaceholder": "Your name",
-  "email": "Email",
-  "emailPlaceholder": "your@email.com",
-  "subject": "Subject",
-  "subjectPlaceholder": "Subject of your message",
-  "message": "Message",
-  "messagePlaceholder": "Write your message here...",
-  "submit": "Send message",
-  "success": "Message sent successfully! We will contact you soon.",
-  "error": {
-    "name": "The name must be at least 2 characters long",
-    "email": "Invalid email address",
-    "subject": "The subject must be at least 5 characters long",
-    "message": "The message must be at least 10 characters long"
-  }},
-
-   "about": {
-    "title": "About Us",
-    "paragraph": "Welcome to Madrassa, your partner in online learning. We are a team passionate about education and new technologies, determined to make learning accessible to everyone.Our platform offers online courses designed by experts in their fields, whether you are a beginner, student, or professional. We believe education should have no barriers or borders.Our mission: To provide a rich, flexible, and personalized learning experience.Our values:Accessibility, quality, innovation, and community.Join our community and be part of the digital education revolution!",
-    "stats": {
-      "users": "Users",
-      "courses": "Courses",
-      "certificates": "Certificates Issued"
-    },
-    "testimonialsTitle": "What Our Users Say",
-    "testimonials": [
-      { "name": "Sara M.", "comment": "An intuitive platform with quality courses!" },
-      {"name": "Yassine B.", "comment": "I got my certificate in record time." },
-      { "name": "Fatima E.", "comment": "Thanks to the whole team, I loved learning here." }
-    ]
+  "addCourse": {
+    "title": "Create a New Course",
+    "description": "Fill in the basic details to set up your new educational course",
+    "formTitle": "Title",
+    "formCategory": "Category",
+    "formateur": "Formateur",
+    "selectCategory": "Select a category",
+    "selectFormateur": "Select a instructor",
+    "back": "Back",
+    "create": "Create",
+    "creating": "Please wait",
+    "toastError": "Please fill all fields.",
+    "toastSuccess": "Course created."
   },
   
+  "common": {
+    "cancel": "Cancel",
+    "save": "Save",
+    "wait": "Please wait",
+    "loading": "Loading..."
+  },
+  "course": {
+    "basicInfo": "Basic Course Information",
+    "descriptionInfo": "Make changes to your courses here. Click save when you're done.",
+    "publish": "Publish",
+    "unpublish": "Unpublish",
+    "remove": "Remove Course",
+    "title": "Title",
+    "titlePlaceholder": "Ex. Fullstack Developer",
+    "description": "Description",
+    "level": "Course Level",
+    "selectLevel": "Select a level",
+    "levels": {
+      "beginner": "Beginner",
+      "medium": "Medium",
+      "advanced": "Advanced"
+      },
+      "caption": "A list of your recent courses.",
+    "create": "Create a new course",
+    "noCourses": "No courses found.",
+    
+    "addDetail":"Add detail information regarding course",
+    "direction":"Go to modules page",
+    "status": "Status",
+    "action": "Action",
+    "published": "Published",
+    "draft": "Draft",
+    "confirmDelete": "Confirm deletion?",
+    "price": "Price (€)",
+    "free": "Free",
+    "thumbnail": "Course Thumbnail",
+    "updateSuccess": "Course updated successfully",
+    "updateFail": "Failed to update course",
+    "publishFail": "Failed to publish or unpublish course"
+  },
+  "module": {
+    "titleHeader": "Let's add modules, add some basic details for your new module",
+    "subtitle": "Add titles to your course modules here.",
+    "labelTitle": "Title",
+    "placeholderTitle": "Your module name",
+    "backToCourse": "Back to course",
+    "createModule": "Create module",
+    "loading": "Loading modules...",
+    "loadingError": "Failed to load modules",
+    "noModules": "No modules available for this course",
+    "successCreate": "Module created successfully",
+    "errorCreation": "Module creation failed",
+    "errorTitle": "Module title is required",
+    "errorCourseId": "Course ID is missing",
+    "updatey":"Update Your module"
+  },
+  "moduleTab": {
+    "title": "Edit Module",
+    "description": "Edit the fields below and click save.",
+    "fields": {
+      "title": "Title",
+      "content": "Content",
+      "duration": "Duration (in minutes)",
+      "order": "Order",
+      "type": "Content type",
+      "selectType": "Select a type",
+      "availableTypes": "Available types",
+      "text": "Text",
+      "pdf": "PDF",
+      "video": "Video"
+    },
+    "save": "Save",
+    "saving": "Saving...",
+    "success": "Module updated successfully!",
+    "error": "Error while updating.",
+    "errors": {
+      "fieldsRequired": "All fields are required."
+    }
+  },
 
-  "monApprentissage": {
-  "titre": "My Learning",
-  "sousTitre": "Track your progress",
-  "chargement": "Loading courses...",
-  "statistiques": {
-    "totalCours": "Total Courses",
-    "termines": "Completed",
-    "enCours": "In Progress"
-  },
-  "progressionGlobale": {
-    "titre": "🎯 Overall Progress",
-    "valeur": "{{valeur}}",
-    "pourcentage": "% completed"
-  },
-  "aucunCours": {
-    "titre": "No courses in progress",
-    "message": "You haven't started any courses yet. Explore our library!",
-    "bouton": "Browse Courses"
-  },
-  "cours": {
-    "progressionTexte": "Progress: {{valeur}}%",
-    "voirCours": "View course →"
-  }
-},
 
 
  
@@ -140,6 +179,7 @@
   
   
 }
+
 
   
 

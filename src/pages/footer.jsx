@@ -16,7 +16,7 @@ import {
 const Footer = ({ className = "" }) => {
   return (
     <footer className={`bg-secondary w-full py-12 ${className}`}>
-      <div className="px-[calc(170px+2rem)] lg:pl-[170px]"> 
+      <div className="px-[calc(170px+2rem)] lg:pl-[170px]">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Logo and description */}
           <div className="space-y-4">
@@ -29,6 +29,7 @@ const Footer = ({ className = "" }) => {
                 />
               </span>
             </h2>
+
             <p className="text-muted-foreground">
               Votre partenaire dans l'apprentissage en ligne, offrant des cours de qualité pour tous les niveaux.
             </p>
@@ -61,13 +62,13 @@ const Footer = ({ className = "" }) => {
               <li>
                 <Link to="/contact" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2">
                   <Mail size={16} />
-                  <span>Contact Us</span>
+                  <span>Contact</span>
                 </Link>
               </li>
               <li>
                 <Link to="/About" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2">
                   <Info size={16} />
-                  <span>About Us</span>
+                  <span>À propos</span>
                 </Link>
               </li>
               <li>

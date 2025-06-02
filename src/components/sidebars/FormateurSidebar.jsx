@@ -1,14 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { BarChart, BookOpen, Users,CreditCard ,ClipboardEdit ,FilePlus   } from "lucide-react";
+import { BarChart, BookOpen, GraduationCap } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useTranslation } from "react-i18next";
-
 
 const Sidebar = () => {
   const [expanded, setExpanded] = useState(false);
-const { t, i18n } = useTranslation();
-  const language = i18n.language;
+
   return (
     <div 
       className={cn(
@@ -21,7 +18,7 @@ const { t, i18n } = useTranslation();
       onMouseEnter={() => setExpanded(true)}
       onMouseLeave={() => setExpanded(false)}
     >
-      
+     
  <div className="p-4 ">
         {/* <Link to="" className={cn(
             "flex items-center gap-3 hover:text-primary transition-colors",
@@ -44,7 +41,7 @@ const { t, i18n } = useTranslation();
       <div className="space-y-6 pt-2 p-5 overflow-hidden ">
         
         <Link 
-          to="/admin/dashboard" 
+          to="/formateur/dashboard" 
           className={cn(
             "flex items-center gap-3 hover:text-primary transition-colors",
             "p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800"
@@ -57,30 +54,12 @@ const { t, i18n } = useTranslation();
             "transition-all duration-200 whitespace-nowrap",
             expanded ? "opacity-100 ml-2" : "opacity-0 w-0"
           )}>
-           {t("Dashboard")} 
+            Dashboard
           </span>
         </Link>
         
         <Link 
-  to="/admin/users" 
-  className={cn(
-    "flex items-center gap-3 hover:text-primary transition-colors",
-    "p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800"
-  )}
->
-  <div className="w-6 flex justify-center">
-    <Users size={22} />
-  </div>
-  <span className={cn(
-    "transition-all duration-200 whitespace-nowrap",
-    expanded ? "opacity-100 ml-2" : "opacity-0 w-0"
-  )}>
-   { t("Users")}
-  </span>
-</Link>
-
-         <Link 
-          to="/admin/cours" 
+          to="/formateur/cours" 
           className={cn(
             "flex items-center gap-3 hover:text-primary transition-colors",
             "p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800"
@@ -93,60 +72,7 @@ const { t, i18n } = useTranslation();
             "transition-all duration-200 whitespace-nowrap",
             expanded ? "opacity-100 ml-2" : "opacity-0 w-0"
           )}>
-            {t("Courses")}
-          </span>
-        </Link>
-
-<Link 
-          to="/admin/cours" 
-          className={cn(
-            "flex items-center gap-3 hover:text-primary transition-colors",
-            "p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800"
-          )}
-        >
-          <div className="w-6 flex justify-center">
-            < ClipboardEdit    size={22} />
-          </div>
-          <span className={cn(
-            "transition-all duration-200 whitespace-nowrap",
-            expanded ? "opacity-100 ml-2" : "opacity-0 w-0"
-          )}>
-            {t("Inscriptions")}
-          </span>
-        </Link>
-       <Link 
-          to="/admin/cours" 
-          className={cn(
-            "flex items-center gap-3 hover:text-primary transition-colors",
-            "p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800"
-          )}
-        >
-          <div className="w-6 flex justify-center">
-            < CreditCard  size={22} />
-          </div>
-          <span className={cn(
-            "transition-all duration-200 whitespace-nowrap",
-            expanded ? "opacity-100 ml-2" : "opacity-0 w-0"
-          )}>
-            {t("Paiement")}
-          </span>
-        </Link>
-
-        <Link 
-          to="/admin/cours" 
-          className={cn(
-            "flex items-center gap-3 hover:text-primary transition-colors",
-            "p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800"
-          )}
-        >
-          <div className="w-6 flex justify-center">
-            < FilePlus  size={22} />
-          </div>
-          <span className={cn(
-            "transition-all duration-200 whitespace-nowrap",
-            expanded ? "opacity-100 ml-2" : "opacity-0 w-0"
-          )}>
-            {t("Requests")}
+            Courses
           </span>
         </Link>
       </div>

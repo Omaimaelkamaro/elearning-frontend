@@ -9,7 +9,19 @@ const Footer = () => {
        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Logo and description */}
           <div className="space-y-4">
+<<<<<<< HEAD
             <h2 className="text-2xl font-bold text-primary">Madrassa</h2>
+=======
+            <h2 className="font-extrabold text-xl text-gray-800 dark:text-white">
+                            <span className="relative inline-block">
+                              Madrassa
+                              <GraduationCap
+                                size={12}
+                                className="absolute -top-2 left-0.5 text-indigo-500 dark:text-indigo-500"
+                              />
+                            </span>
+                            </h2>
+>>>>>>> 0118a802aba13f3bae0b045ae86e64d956256e45
             <p className="text-muted-foreground">
               Votre partenaire dans l'apprentissage en ligne, offrant des cours de qualité pour tous les niveaux.
             </p>
