@@ -20,11 +20,14 @@ import AddCourseF from './pages/formateur/Course/AddCourse';
 import EditCourse from './pages/admin/Course/EditCourse';
 import EditCourseF from './pages/formateur/Course/EditCourse';
 import { CourseProvider } from './context/Course/CourseContext';  
+import { UserProvider } from './context/User/UserContext';  
 import { CategoryProvider } from './context/Category/CategoryContext';
 import { FormateurProvider } from './context/Formateur/FormateurContext';
 import { ModuleProvider } from './context/Module/ModuleContext';
 import CreateModule from './pages/formateur/module/CreateModule';
 import EditModule from './pages/formateur/module/EditModule';
+import UsersTable from './pages/admin/users/UsersTable';
+import AddUser from './pages/admin/users/AddUser';
 
 
 function App() {
@@ -33,6 +36,7 @@ function App() {
     <ModuleProvider>
     <FormateurProvider >
     <CourseProvider>
+    <UserProvider>
        {/* Ajout ici */}
       <Router>
         <Routes>
@@ -52,7 +56,12 @@ function App() {
                 <Route path="dashboard" element={<Dashboard />} />
                 <Route path="cours"element={<CourseTable />}/>
                 <Route path="cours/create"element={<AddCourse />}/>
+                
                 <Route path="cours/:id"element={<EditCourse />}/>
+
+
+                <Route path="users"element={<UsersTable/>}/>
+                <Route path="users/create"element={<AddUser />}/>
               </Route>
               <Route
                 path="/formateur"
@@ -78,6 +87,7 @@ function App() {
           </Route>
         </Routes>
       </Router>
+    </UserProvider>
     </CourseProvider>
     </FormateurProvider >
     </ModuleProvider >

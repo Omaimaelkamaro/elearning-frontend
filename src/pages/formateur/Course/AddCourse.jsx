@@ -12,21 +12,23 @@ import {
 } from "@/components/ui/select";
 import { useCourseContext } from "@/context/Course/CourseContext.jsx";
 import { useCategoryContext } from "@/context/Category/CategoryContext";
-// import { useFormateurContext } from "@/context/Formateur/FormateurContext";
+
 import { Loader2 } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import { useTranslation } from "react-i18next";
 
+
+
 const AddCourse = () => {
   const [courseTitle, setCourseTitle] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
 
   const { categories, getAllCategories } = useCategoryContext();
-  // const { formateurs, getAllFormateurs } = useFormateurContext();
-  // console.log("Formateurs récupérés :", formateurs);
-  // const [selectedFormateur, setSelectedFormateur] = useState("");
+  
+
+
 
 
     const {addCourse,courses, isLoading ,isSuccess,error} = useCourseContext();
@@ -38,14 +40,14 @@ const AddCourse = () => {
   
   const createCourseHandler = async () => {
   if (!selectedCategory || !courseTitle) {
-    toast.error("Please fill all fields.");
+   toast.error(t("addCourse.toastError"));
     return;
   }
 
   await addCourse({
     title:courseTitle,
     categorie_id: parseInt(selectedCategory), 
-    // formateur_id: selectedFormateur,
+ 
  
   });
 };
@@ -53,31 +55,32 @@ const AddCourse = () => {
   // for displaying toast
   useEffect(()=>{
     if(isSuccess){
-        toast.success(courses?.message || "Course created.");
+toast.success(courses?.message || t("addCourse.toastSuccess"));
         navigate("/formateur/cours");
     }
     getAllCategories();
-    // getAllFormateurs();
+ 
   },[isSuccess, error])
 
   useEffect(()=>{
     getAllCategories();
-    // getAllFormateurs();
+   
   },[])
 
   return (
     <div className="flex-1 mx-10">
       <div className="mb-4">
-        <h1 className="font-bold text-xl">
-          Create a New Course
-        </h1>
-        <p className="text-sm">
-          Fill in the basic details to set up your new educational course
-        </p>
+       <h1 className="font-bold text-xl">
+  {t("addCourse.title")}
+</h1>
+<p className="text-sm">
+  {t("addCourse.description")}
+</p>
+
       </div>
       <div className="space-y-4">
         <div>
-          <Label>Title</Label>
+          <Label>{t("addCourse.formTitle")}</Label>
           <Input
             type="text"
             value={courseTitle}
@@ -85,15 +88,14 @@ const AddCourse = () => {
             placeholder="Your Course Name"
           />
         </div>
-        <div>
-          <Label>Category</Label>
+        <div> <Label>{t("addCourse.formCategory")}</Label>
           <Select onValueChange={setSelectedCategory}>
-            <SelectTrigger className="w-[180px]">
-              <SelectValue placeholder="Select a category" />
+            <SelectTrigger className="min-w-[180px] max-w-[220px]">
+              <SelectValue placeholder={t("addCourse.selectCategory")} />
             </SelectTrigger>
             <SelectContent>
   <SelectGroup>
-    <SelectLabel>Category</SelectLabel>
+    <SelectLabel>{t("Category")}</SelectLabel>
     {categories.map((category) => (
   <SelectItem key={category.id} value={category.id.toString()}>
     {language === "fr" ? category.titre : category.title}
@@ -106,39 +108,26 @@ const AddCourse = () => {
   </SelectGroup>
 </SelectContent>
 
-          </Select>
-           {/* <Label>Formateur</Label>
-  <Select onValueChange={setSelectedFormateur}>
-    <SelectTrigger className="w-[180px]">
-      <SelectValue placeholder="Select a formateur" />
-    </SelectTrigger>
-    <SelectContent>
-      <SelectGroup>
-        <SelectLabel>Formateurs</SelectLabel>
-        {formateurs.map((formateur) => (
-         <SelectItem
-                  key={formateur.id}
-                  value={formateur.id.toString()}
-                >
-                  {formateur.user?.name || `Formateur #${formateur.id}`}
-                </SelectItem>
-        ))}
-      </SelectGroup>
-    </SelectContent>
-  </Select> */}
+           </Select>
+           
+
+ 
         </div>
         <div className="flex items-center gap-2">
-          <Button variant="outline" onClick={() => navigate("/admin/cours")}>
-            Back
+          <Button variant="outline" onClick={() => navigate("/formateur/cours")}>
+            {t("addCourse.back")}
           </Button>
-          <Button disabled={isLoading} onClick={createCourseHandler}>
+          <Button disabled={isLoading} onClick={async () => {
+    await createCourseHandler();
+    
+    navigate("/formateur/cours");}}>
             {isLoading ? (
               <>
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                Please wait
+              {t("addCourse.creating")}
               </>
             ) : (
-              "Create"
+               t("addCourse.create")
             )}
           </Button>
         </div>

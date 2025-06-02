@@ -14,6 +14,11 @@
   "Instructor": "Instructor",
   "profile": "Profile",
   "logout": "Log out",
+   "Users": "Users",
+  "Courses": "Courses",
+  "Dashboard": "Dashboard",
+  "Paiement":"payments",
+  "Requests":"Requests",
  "signup": {
   "title": "Signup",
   "description": "Create a new account and click signup when you're done.",
@@ -30,6 +35,8 @@
   "success": "Signup successful",
   "failed": "Signup failed",
  "Category":"Category"
+
+
 },
    "login": {
     "title": "Login",
@@ -42,8 +49,104 @@
     "fillAllFields": "Please fill in both email and password",
     "success": "Login successful",
     "failed": "Login failed"
+  },
+  "addCourse": {
+    "title": "Create a New Course",
+    "description": "Fill in the basic details to set up your new educational course",
+    "formTitle": "Title",
+    "formCategory": "Category",
+    "formateur": "Formateur",
+    "selectCategory": "Select a category",
+    "selectFormateur": "Select a instructor",
+    "back": "Back",
+    "create": "Create",
+    "creating": "Please wait",
+    "toastError": "Please fill all fields.",
+    "toastSuccess": "Course created."
+  },
+  
+  "common": {
+    "cancel": "Cancel",
+    "save": "Save",
+    "wait": "Please wait",
+    "loading": "Loading..."
+  },
+  "course": {
+    "basicInfo": "Basic Course Information",
+    "descriptionInfo": "Make changes to your courses here. Click save when you're done.",
+    "publish": "Publish",
+    "unpublish": "Unpublish",
+    "remove": "Remove Course",
+    "title": "Title",
+    "titlePlaceholder": "Ex. Fullstack Developer",
+    "description": "Description",
+    "level": "Course Level",
+    "selectLevel": "Select a level",
+    "levels": {
+      "beginner": "Beginner",
+      "medium": "Medium",
+      "advanced": "Advanced"
+      },
+      "caption": "A list of your recent courses.",
+    "create": "Create a new course",
+    "noCourses": "No courses found.",
+    
+    "addDetail":"Add detail information regarding course",
+    "direction":"Go to modules page",
+    "status": "Status",
+    "action": "Action",
+    "published": "Published",
+    "draft": "Draft",
+    "confirmDelete": "Confirm deletion?",
+    "price": "Price (€)",
+    "free": "Free",
+    "thumbnail": "Course Thumbnail",
+    "updateSuccess": "Course updated successfully",
+    "updateFail": "Failed to update course",
+    "publishFail": "Failed to publish or unpublish course"
+  },
+  "module": {
+    "titleHeader": "Let's add modules, add some basic details for your new module",
+    "subtitle": "Add titles to your course modules here.",
+    "labelTitle": "Title",
+    "placeholderTitle": "Your module name",
+    "backToCourse": "Back to course",
+    "createModule": "Create module",
+    "loading": "Loading modules...",
+    "loadingError": "Failed to load modules",
+    "noModules": "No modules available for this course",
+    "successCreate": "Module created successfully",
+    "errorCreation": "Module creation failed",
+    "errorTitle": "Module title is required",
+    "errorCourseId": "Course ID is missing",
+    "updatey":"Update Your module"
+  },
+  "moduleTab": {
+    "title": "Edit Module",
+    "description": "Edit the fields below and click save.",
+    "fields": {
+      "title": "Title",
+      "content": "Content",
+      "duration": "Duration (in minutes)",
+      "order": "Order",
+      "type": "Content type",
+      "selectType": "Select a type",
+      "availableTypes": "Available types",
+      "text": "Text",
+      "pdf": "PDF",
+      "video": "Video"
+    },
+    "save": "Save",
+    "saving": "Saving...",
+    "success": "Module updated successfully!",
+    "error": "Error while updating.",
+    "errors": {
+      "fieldsRequired": "All fields are required."
+    }
   }
 }
+
+
 
   
 

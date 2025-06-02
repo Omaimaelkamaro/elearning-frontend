@@ -46,10 +46,10 @@ const Login = () => {
       dispatch({ type: "LOGIN_SUCCESS", payload: data.user });
       localStorage.setItem("user", JSON.stringify(data.user));
       if (data.user.role === "administrateur") {
-      navigate("/admin/profile");
+      navigate("/admin/dashboard");
     }else if(data.user.role=="formateur")
 {
-  navigate("/formateur/profile");
+  navigate("/formateur/dashboard");
 }else{
   navigate("/user/profile");
 }

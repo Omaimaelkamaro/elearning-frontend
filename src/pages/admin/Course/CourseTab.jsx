@@ -19,12 +19,12 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useCourseContext } from "@/context/Course/CourseContext.jsx";
-// import { useCategoryContext } from "@/context/Category/CategoryContext";
 import { Loader2 } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "sonner";
 import { Checkbox } from "@/components/ui/checkbox";
+import { useTranslation } from "react-i18next";
 
 const CourseTab = () => {
   const [input, setInput] = useState({
@@ -37,10 +37,9 @@ const CourseTab = () => {
     gratuit: false,
   });
 
+  const { t, i18n } = useTranslation();
   const { id } = useParams();
   const navigate = useNavigate();
-  // const { categories } = useCategoryContext();
-  console.log(id);
   const {
     data: courseByIdData,
     isLoading: courseByIdLoading,
@@ -52,7 +51,6 @@ const CourseTab = () => {
 
   const [previewThumbnail, setPreviewThumbnail] = useState("");
   const [isSaving, setIsSaving] = useState(false);
-
 
   useEffect(() => {
     if (courseByIdData?.course) {
@@ -74,10 +72,6 @@ const CourseTab = () => {
     setInput((prev) => ({ ...prev, [name]: value }));
   };
 
-  // const selectCategory = (value) => {
-  //   setInput((prev) => ({ ...prev, category: value }));
-  // };
-
   const selectCourseLevel = (value) => {
     setInput((prev) => ({ ...prev, courseLevel: value }));
   };
@@ -94,40 +88,31 @@ const CourseTab = () => {
 
   const updateCourseHandler = async () => {
     setIsSaving(true);
-   
+
     const formData = new FormData();
-    formData.append("title", input.courseTitle); 
-  formData.append("description", input.description);
-  formData.append("categorie_id", input.category); 
-  formData.append("niveau_de_difficulte", input.courseLevel); 
-  formData.append("prix", input.coursePrice); 
-  formData.append("gratuit", input.gratuit ? 1 : 0); 
+    formData.append("title", input.courseTitle);
+    formData.append("description", input.description);
+    formData.append("categorie_id", input.category);
+    formData.append("niveau_de_difficulte", input.courseLevel);
+    formData.append("prix", input.coursePrice);
+    formData.append("gratuit", input.gratuit ? 1 : 0);
 
-  await updateCourse(id, formData);
+    await updateCourse(id, formData);
 
-
-  if (input.courseThumbnail) {
-    const imageData = new FormData();
-    imageData.append("photo_path", input.courseThumbnail); 
-     await updateImageCourse(id, imageData);
-   
-  }
-
-  
+    if (input.courseThumbnail) {
+      const imageData = new FormData();
+      imageData.append("photo_path", input.courseThumbnail);
+      await updateImageCourse(id, imageData);
+    }
 
     try {
-      console.log("CourseData envoyé au backend:", formData );
-      
-      
-      toast.success("Course updated successfully");
+      toast.success(t("course.updateSuccess"));
     } catch (err) {
-      toast.error("Failed to update course");
+      toast.error(t("course.updateFail"));
     } finally {
       setIsSaving(false);
     }
   };
-
-  
 
   const publishStatusHandler = async (action) => {
     try {
@@ -137,21 +122,19 @@ const CourseTab = () => {
         toast.success(response.data.message);
       }
     } catch (error) {
-      toast.error("Failed to publish or unpublish course");
+      toast.error(t("course.publishFail"));
     }
   };
 
-  
-
-  if (courseByIdLoading) return <h1>Loading...</h1>;
+  if (courseByIdLoading) return <h1>{t("common.loading")}</h1>;
 
   return (
     <Card>
       <CardHeader className="flex flex-row justify-between">
         <div>
-          <CardTitle>Basic Course Information</CardTitle>
+          <CardTitle>{t("course.basicInfo")}</CardTitle>
           <CardDescription>
-            Make changes to your courses here. Click save when you're done.
+            {t("course.descriptionInfo")}
           </CardDescription>
         </div>
         <div className="space-x-2">
@@ -162,49 +145,51 @@ const CourseTab = () => {
               publishStatusHandler(courseByIdData?.course.isPublished ? "false" : "true")
             }
           >
-            {courseByIdData?.course.isPublished ? "Unpublish" : "Publish"}
+            {courseByIdData?.course.isPublished
+              ? t("course.unpublish")
+              : t("course.publish")}
           </Button>
-          <Button variant="destructive">Remove Course</Button>
+          <Button variant="destructive">{t("course.remove")}</Button>
         </div>
       </CardHeader>
       <CardContent>
         <div className="space-y-4 mt-5">
           <div>
-            <Label>Title</Label>
+            <Label>{t("course.title")}</Label>
             <Input
               type="text"
               name="courseTitle"
               value={input.courseTitle}
               onChange={changeEventHandler}
-              placeholder="Ex. Fullstack developer"
+              placeholder={t("course.titlePlaceholder")}
             />
           </div>
 
           <div>
-            <Label>Description</Label>
+            <Label>{t("course.description")}</Label>
             <RichTextEditor input={input} setInput={setInput} />
           </div>
 
           <div className="flex items-center gap-5 flex-wrap">
             <div>
-              <Label>Course Level</Label>
+              <Label>{t("course.level")}</Label>
               <Select value={input.courseLevel} onValueChange={selectCourseLevel}>
-                <SelectTrigger className="w-[180px]">
-                  <SelectValue placeholder="Select a course level" />
+                <SelectTrigger className="w-[180px] truncate">
+                  <SelectValue placeholder={t("course.selectLevel")} />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectGroup>
-                    <SelectLabel>Course Level</SelectLabel>
-                    <SelectItem value="basique">Beginner</SelectItem>
-                    <SelectItem value="moyen">Medium</SelectItem>
-                    <SelectItem value="avance">Advanced</SelectItem>
+                    <SelectLabel>{t("course.level")}</SelectLabel>
+                    <SelectItem value="basique">{t("course.levels.beginner")}</SelectItem>
+                    <SelectItem value="moyen">{t("course.levels.medium")}</SelectItem>
+                    <SelectItem value="avance">{t("course.levels.advanced")}</SelectItem>
                   </SelectGroup>
                 </SelectContent>
               </Select>
             </div>
 
             <div>
-              <Label>Price ($)</Label>
+              <Label>{t("course.price")}</Label>
               <Input
                 type="number"
                 name="coursePrice"
@@ -217,19 +202,18 @@ const CourseTab = () => {
 
             <div className="flex items-center space-x-2 mt-5">
               <Checkbox
-    id="gratuit"
-    checked={input.gratuit === true || input.gratuit === "1"}
-    onChange={(e) =>
-      setInput({ ...input, gratuit: e.target.checked })
-    }
-  />
-
-              <Label htmlFor="gratuit">Free</Label>
+                id="gratuit"
+                checked={input.gratuit === true || input.gratuit === "1"}
+                onChange={(e) =>
+                  setInput({ ...input, gratuit: e.target.checked })
+                }
+              />
+              <Label htmlFor="gratuit">{t("course.free")}</Label>
             </div>
           </div>
 
           <div>
-            <Label>Course Thumbnail</Label>
+            <Label>{t("course.thumbnail")}</Label>
             <Input
               type="file"
               onChange={selectThumbnail}
@@ -237,26 +221,32 @@ const CourseTab = () => {
               className="w-fit"
             />
             {previewThumbnail && (
-           <img
-            src={previewThumbnail}
+              <img
+                src={previewThumbnail}
                 className="w-64 my-2"
-                alt="Course Thumbnail"
+                alt={t("course.thumbnail")}
               />
             )}
           </div>
 
           <div className="flex gap-4">
             <Button onClick={() => navigate("/admin/cours")} variant="outline">
-              Cancel
+              {t("common.cancel")}
             </Button>
-            <Button disabled={isSaving} onClick={updateCourseHandler}>
+            <Button
+              disabled={isSaving}
+              onClick={async () => {
+                await updateCourseHandler();
+                navigate("/admin/cours");
+              }}
+            >
               {isSaving ? (
                 <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  Please wait
+                  {t("common.wait")}
                 </>
               ) : (
-                "Save"
+                t("common.save")
               )}
             </Button>
           </div>

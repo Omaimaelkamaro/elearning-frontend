@@ -30,31 +30,56 @@ export const ModuleService = {
     return res.data;
   },
 
-  updateModule: async (moduleId, courseId, moduleData) => {
-  const api = createAxiosInstance();
+ updateModule : async (moduleData, courseId, moduleId) => {
+  
 
-  const formData = new FormData();
-  formData.append('title', moduleData.title);
-  formData.append('duree', moduleData.duree);
-  formData.append('ordre', moduleData.ordre);
-  formData.append('type_contenu', moduleData.type_contenu);
-
-
-
-  const res = await api.post(
-    `${BASE_URL}/modules/${courseId}/${moduleId}?_method=PUT`, // Laravel method spoofing
-    formData,
-    {
-      headers: {
-        'Authorization': `Bearer ${localStorage.getItem('token')}`,
-        'Accept': 'application/json',
-        // Ne PAS mettre 'Content-Type': multipart/form-data ici, axios le gère automatiquement
+  if (moduleData.type_contenu === "text") {
+    // Envoi JSON simple
+    return await axios.put(
+      `${BASE_URL}/modules/${courseId}/${moduleId}`,
+      {
+        title: moduleData.title,
+        duree: parseInt(moduleData.duree, 10),
+        ordre: parseInt(moduleData.ordre, 10),
+        type_contenu: moduleData.type_contenu,
+        contenu: moduleData.contenu, // texte
       },
-    }
-  );
+      {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+          "Content-Type": "application/json",
+          'Accept': 'application/json'
+        },
+         withCredentials: true,
+      }
+    );
+  } else {
+    // Envoi multipart/form-data pour fichier
+    const formData = new FormData();
+    formData.append("title", moduleData.title);
+    formData.append("duree", parseInt(moduleData.duree, 10));
+    formData.append("ordre", parseInt(moduleData.ordre, 10));
+    formData.append("type_contenu", moduleData.type_contenu);
+    formData.append("contenu", moduleData.contenu); // fichier (File)
+    formData.append("_method", "PUT");
 
-  return res.data;
+    return await axios.post(
+      `${BASE_URL}/modules/${courseId}/${moduleId}`,
+      formData,
+      {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+          // Ne PAS mettre Content-Type, axios le gère automatiquement
+         "Content-Type": "multipart/form-data"
+        },
+         withCredentials: true,
+      }
+    );
+  }
 },
+
+
+
   deletemodules: async (moduleId, courseId) => {
     const api = createAxiosInstance();
     const res = await api.delete(`${BASE_URL}/modules/${courseId}${moduleId}`);

@@ -58,10 +58,10 @@ export const ModuleProvider = ({ children }) => {
   };
 
 
-  const updatemodules = async (newmodule,cours,moduleId) => {
+  const updatemodules = async (newmodule,coursId,moduleId) => {
     dispatch({ type: "SET_LOADING", payload: true });
     try {
-      const data = await ModuleService.updatemodules(newmodule,cours.id,moduleId);
+      const data = await ModuleService.updateModule(newmodule,coursId,moduleId);
       dispatch({ type: "UPDATE_Modules", payload: data });
     } catch (error) {
       dispatch({ type: "SET_ERROR", payload: error.message });

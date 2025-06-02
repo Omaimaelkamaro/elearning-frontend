@@ -1,8 +1,11 @@
 import { Edit } from "lucide-react";
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const Module = ({ module, courseId, index }) => {
+    const { t, i18n } = useTranslation();
+  const language = i18n.language;
   const navigate = useNavigate();
   const goToUpdatemodule = () => {
     navigate(`${module.id}`);

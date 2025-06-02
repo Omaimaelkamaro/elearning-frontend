@@ -13,6 +13,11 @@
   "Instructor": "Formateur",
   "profile": "Profil",
   "logout": "Se déconnecter",
+  "Users": "Utilisateurs",
+  "Courses": "Cours",
+  "Dashboard": "Tableau de bord",
+    "Paiement":"paiements",
+    "Requests":"Demandes",
  "signup": {
   "title": "Créer un compte",
   "description": "Créez un nouveau compte et cliquez sur s'inscrire lorsque vous avez terminé.",
@@ -29,6 +34,7 @@
   "success": "Inscription réussie",
   "failed": "Échec de l'inscription",
    "Category":"Catégorie"
+   
 },
 
    "login": {
@@ -44,7 +50,102 @@
     "failed": "Échec de la connexion"
 
 
-}
-}
+},
+"addCourse": {
+    "title": "Créer un nouveau cours",
+    "description": "Remplissez les informations de base pour configurer votre nouveau cours",
+    "formTitle": "Titre",
+    "formCategory": "Catégorie",
+    "formateur": "Formateur",
+    "selectCategory": "Sélectionnez une catégorie",
+    "selectFormateur": "Sélectionnez un formateur",
+    "back": "Retour",
+    "create": "Créer",
+    "creating": "Veuillez patienter",
+    "toastError": "Veuillez remplir tous les champs.",
+    "toastSuccess": "Cours créé."
+  },
+  "common": {
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+    "wait": "Veuillez patienter",
+    "loading": "Chargement..."
+  
+},
+"course": {
+    "basicInfo": "Informations de base sur le cours",
+    "descriptionInfo": "Modifiez votre cours ici. Cliquez sur enregistrer une fois terminé.",
+    "publish": "Publier",
+    "unpublish": "Dépublier",
+    "remove": "Supprimer le cours",
+    "title": "Titre",
+    "titlePlaceholder": "Ex. Développeur Fullstack",
+    "description": "Description",
+    "level": "Niveau du cours",
+    "selectLevel": "Sélectionner un niveau",
+    "levels": {
+      "beginner": "Débutant",
+      "medium": "Intermédiaire",
+      "advanced": "Avancé"
+      
+    },
+    "create": "Créer un nouveau cours",
+    "noCourses": "Aucun cours trouvé.",
+    "caption": "Liste de vos cours récents.",
+   
+    "addDetail": "Ajouter des informations détaillées concernant le cours",
+"direction": "Aller à la page des modules",
 
- 
+    "status": "Statut",
+    "action": "Action",
+    "published": "Publié",
+    "draft": "Brouillon",
+    "confirmDelete": "Confirmer la suppression ?",
+    "price": "Prix (€)",
+    "free": "Gratuit",
+    "thumbnail": "Image miniature",
+    "updateSuccess": "Cours mis à jour avec succès",
+    "updateFail": "Échec de la mise à jour du cours",
+    "publishFail": "Échec de la publication ou dépublication"
+  },
+   "module": {
+    "titleHeader": "Ajoutons des modules, ajoutez des détails de base pour votre nouveau module",
+    "subtitle": "Ajoutez des titres aux modules de votre cours ici.",
+    "labelTitle": "Titre",
+    "placeholderTitle": "Nom de votre module",
+    "backToCourse": "Retour au cours",
+    "createModule": "Créer un module",
+    "loading": "Chargement des modules...",
+    "loadingError": "Échec du chargement des modules",
+    "noModules": "Aucun module disponible pour ce cours",
+    "successCreate": "Module créé avec succès",
+    "errorCreation": "Échec de la création du module",
+    "errorTitle": "Le titre du module est requis",
+    "errorCourseId": "ID du cours manquant",
+     "updatey":"Modifier votre module"
+  },
+  "moduleTab": {
+    "title": "Modifier le module",
+    "description": "Modifiez les champs ci-dessous et cliquez sur enregistrer.",
+    "fields": {
+      "title": "Titre",
+      "content": "Contenu",
+      "duration": "Durée (en minutes)",
+      "order": "Ordre",
+      "type": "Type de contenu",
+      "selectType": "Sélectionnez un type",
+      "availableTypes": "Types disponibles",
+      "text": "Texte",
+      "pdf": "PDF",
+      "video": "Vidéo"
+    },
+    "save": "Enregistrer",
+    "saving": "En cours...",
+    "success": "Module mis à jour avec succès !",
+    "error": "Erreur lors de la mise à jour.",
+    "errors": {
+      "fieldsRequired": "Tous les champs sont obligatoires."
+    }
+  }
+
+}
