@@ -10,6 +10,7 @@
   "home": "Accueil",
   "myLearning": "Mon apprentissage",
   "community": "Communauté",
+   "becomeInstructor": "Devenir formateur",
   "Instructor": "Formateur",
   "profile": "Profil",
   "logout": "Se déconnecter",
@@ -42,7 +43,108 @@
     "success": "Connexion réussie",
     "failed": "Échec de la connexion"
 
+},
+"contact": {
+  "title": "Contactez-nous",
+  "description": "Vous avez des questions ou besoin d'aide ? Notre équipe est là pour vous accompagner et répondre à toutes vos demandes. N'hésitez pas à nous contacter, nous vous répondrons dans les plus brefs délais.",
+  "cta": "Nous sommes ravis de vous lire ! ",
+  "formTitle": "Envoyez-nous un message",
+  "name": "Nom",
+  "namePlaceholder": "Votre nom",
+  "email": "Email",
+  "emailPlaceholder": "votre@email.com",
+  "subject": "Sujet",
+  "subjectPlaceholder": "Sujet de votre message",
+  "message": "Message",
+  "messagePlaceholder": "Écrivez votre message ici...",
+  "submit": "Envoyer le message",
+  "success": "Message envoyé avec succès ! Nous vous contacterons bientôt.",
+  "error": {
+    "name": "Le nom doit comporter au moins 2 caractères",
+    "email": "Adresse email invalide",
+    "subject": "Le sujet doit comporter au moins 5 caractères",
+    "message": "Le message doit comporter au moins 10 caractères"
+  }},
 
-}}
+  "about": {
+  "title": "À propos de nous",
+  "paragraph": "Bienvenue sur Madrassa, votre partenaire dans 'apprentissage en ligne. Nous sommes une équipe passionnée par l'éducation et les nouvelles technologies, déterminée à rendre l'apprentissage accessible à tous. Notre plateforme propose des cours en ligne conçus par des experts dans leurs domaines, que vous soyez débutant, étudiant ou professionnel. Nous croyons que l'éducation ne doit pas avoir de barrières, ni de frontières. Notre mission: Offrir une expérience d'apprentissage enrichissante flexible et adaptée à chaque apprenant. Nos valeurs: Accessibilité, qualité, innovation et communauté. Rejoignez notre communauté et faites partie de la révolution numérique de l'éducation !",
+  "stats": {
+    "users": "Formateurs inscrits",
+    "courses": "Cours disponibles",
+    "certificates": "Certificats délivrés"
+  },
+  "testimonialsTitle": "Ce que disent nos utilisateurs",
+  "testimonials": [
+    { "name": "Sara M.", "comment": "Une plateforme intuitive et des cours de qualité !" },
+    { "name": "Yassine B.", "comment": "J’ai pu obtenir mon certificat en un temps record." },
+    { "name": "Fatima E.", "comment": "Merci à toute l’équipe, j’ai adoré apprendre ici." }
+  ],
+  "images": {
+    "professor": "Professeur donnant un cours",
+    "classroom": "Classe d'apprenants",
+    "onlineTraining": "Formation en ligne",
+    "certificate": "Certificat obtenu"
+  }
+},
+  
+
+"monApprentissage": {
+  "titre": "Mon Apprentissage",
+  "sousTitre": "Suivez votre progression",
+  "chargement": "Chargement des cours...",
+  "statistiques": {
+    "totalCours": "Total Cours",
+    "termines": "Terminés",
+    "enCours": "En Cours"
+  },
+  "progressionGlobale": {
+    "titre": "🎯 Progression Globale",
+    "valeur": "{{valeur}}",
+    "pourcentage": "% complété"
+  },
+  "aucunCours": {
+    "titre": "Aucun cours en cours",
+    "message": "Vous n'avez encore commencé aucun cours. Explorez notre bibliothèque !",
+    "bouton": "Explorer les cours"
+  },
+  "cours": {
+    "progressionTexte": "Progression : {{valeur}}%",
+    "voirCours": "Voir le cours →"
+  }
+},
+
+
+  "title": "Devenez formateur chez",
+  "description": "Partagez votre expertise et devenez une source d'inspiration pour des apprenants du monde entier. En rejoignant notre réseau de formateurs, vous aurez l’opportunité de contribuer activement à l’évolution de l’éducation en ligne tout en valorisant vos compétences.",
+  "buttonJoin": "Rejoignez-nous",
+  "step1Title": "Créez votre profil",
+  "step1Text": "Présentez vos compétences et domaines d'expertise pour mieux cibler les besoins des apprenants.",
+  "step2Title": "Proposez des cours",
+  "step2Text": "Créez des modules pédagogiques engageants pour répondre aux attentes de votre public.",
+  "step3Title": "Générez des revenus",
+  "step3Text": "Recevez une rémunération équitable pour chaque cours que vous publiez sur la plateforme.",
+  "formTitle": "Soumettre votre candidature",
+  "formDescription": "Expliquez en quoi vous seriez un excellent formateur...",
+  "formLabel": "Texte de motivation",
+  "formPlaceholder": "Partagez votre expérience...",
+  "formButton": "Envoyer ma candidature",
+  "formButtonLoading": "Envoi en cours...",
+  "successTitle": "Candidature reçue",
+  "successMessage": "Merci pour votre intérêt. Notre équipe examinera votre profil prochainement.",
+  "currentStatus": "Statut actuel :",
+  "emailNotice": "Vous recevrez un email une fois votre demande traitée.",
+  "statusPending": "En attente",
+  "statusApproved": "Approuvée",
+  "statusRejected": "Rejetée",
+  "validationMessage": "Votre texte de motivation doit comporter au moins 50 caractères"
+
+
+
+
+
+
+
+}
 
  

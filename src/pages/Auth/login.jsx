@@ -45,13 +45,14 @@ const Login = () => {
       toast.success(data.message || t("login.success"));
       dispatch({ type: "LOGIN_SUCCESS", payload: data.user });
       localStorage.setItem("user", JSON.stringify(data.user));
+      
       if (data.user.role === "administrateur") {
       navigate("/admin/profile");
     }else if(data.user.role=="formateur")
 {
   navigate("/formateur/profile");
 }else{
-  navigate("/user/profile");
+  navigate("/etudiant/profile");
 }
     } catch (error) {
       toast.error(error.response?.data?.message || t("login.failed"));

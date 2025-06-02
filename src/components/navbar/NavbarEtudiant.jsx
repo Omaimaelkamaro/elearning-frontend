@@ -203,7 +203,7 @@ const NavbarEtudiant = () => {
               {t("home")}
             </Link>
             <Link
-              to="/my-learning"
+              to="/etudiant/my-learning"
               className="text-sm font-extralight hover:text-blue-500"
             >
               {t("myLearning")}
@@ -215,7 +215,7 @@ const NavbarEtudiant = () => {
               {t("community")}
             </Link>
             <Link
-              to="/become-instructor"
+              to="/etudiant/devenir-formateur"
               className="text-sm font-extralight hover:text-blue-500"
             >
               {t("becomeInstructor")}

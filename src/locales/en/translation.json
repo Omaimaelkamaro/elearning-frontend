@@ -41,7 +41,104 @@
     "fillAllFields": "Please fill in both email and password",
     "success": "Login successful",
     "failed": "Login failed"
+  },
+
+  "contact": {
+  "title": "Contact Us",
+  "description": "Do you have any questions or need help? Our team is here to assist you and respond to all your requests. Feel free to contact us, we will respond as soon as possible.",
+  "cta": "We're happy to hear from you! ",
+  "formTitle": "Send us a message",
+  "name": "Name",
+  "namePlaceholder": "Your name",
+  "email": "Email",
+  "emailPlaceholder": "your@email.com",
+  "subject": "Subject",
+  "subjectPlaceholder": "Subject of your message",
+  "message": "Message",
+  "messagePlaceholder": "Write your message here...",
+  "submit": "Send message",
+  "success": "Message sent successfully! We will contact you soon.",
+  "error": {
+    "name": "The name must be at least 2 characters long",
+    "email": "Invalid email address",
+    "subject": "The subject must be at least 5 characters long",
+    "message": "The message must be at least 10 characters long"
+  }},
+
+   "about": {
+    "title": "About Us",
+    "paragraph": "Welcome to Madrassa, your partner in online learning. We are a team passionate about education and new technologies, determined to make learning accessible to everyone.Our platform offers online courses designed by experts in their fields, whether you are a beginner, student, or professional. We believe education should have no barriers or borders.Our mission: To provide a rich, flexible, and personalized learning experience.Our values:Accessibility, quality, innovation, and community.Join our community and be part of the digital education revolution!",
+    "stats": {
+      "users": "Users",
+      "courses": "Courses",
+      "certificates": "Certificates Issued"
+    },
+    "testimonialsTitle": "What Our Users Say",
+    "testimonials": [
+      { "name": "Sara M.", "comment": "An intuitive platform with quality courses!" },
+      {"name": "Yassine B.", "comment": "I got my certificate in record time." },
+      { "name": "Fatima E.", "comment": "Thanks to the whole team, I loved learning here." }
+    ]
+  },
+  
+
+  "monApprentissage": {
+  "titre": "My Learning",
+  "sousTitre": "Track your progress",
+  "chargement": "Loading courses...",
+  "statistiques": {
+    "totalCours": "Total Courses",
+    "termines": "Completed",
+    "enCours": "In Progress"
+  },
+  "progressionGlobale": {
+    "titre": "🎯 Overall Progress",
+    "valeur": "{{valeur}}",
+    "pourcentage": "% completed"
+  },
+  "aucunCours": {
+    "titre": "No courses in progress",
+    "message": "You haven't started any courses yet. Explore our library!",
+    "bouton": "Browse Courses"
+  },
+  "cours": {
+    "progressionTexte": "Progress: {{valeur}}%",
+    "voirCours": "View course →"
   }
+},
+
+
+ 
+  "title": "Become a trainer at",
+  "description": "Share your expertise and become a source of inspiration for learners around the world. By joining our network of trainers, you'll have the opportunity to actively contribute to the evolution of online education while showcasing your skills.",
+  "buttonJoin": "Join us",
+  "step1Title": "Create your profile",
+  "step1Text": "Showcase your skills and areas of expertise to better meet learners’ needs.",
+  "step2Title": "Propose courses",
+  "step2Text": "Create engaging learning modules tailored to your audience’s expectations.",
+  "step3Title": "Generate income",
+  "step3Text": "Earn fair compensation for each course you publish on the platform.",
+  "formTitle": "Submit your application",
+  "formDescription": "Explain why you would make an excellent trainer...",
+  "formLabel": "Motivation text",
+  "formPlaceholder": "Share your experience...",
+  "formButton": "Send my application",
+  "formButtonLoading": "Sending...",
+  "successTitle": "Application received",
+  "successMessage": "Thank you for your interest. Our team will review your profile soon.",
+  "currentStatus": "Current status:",
+  "emailNotice": "You will receive an email once your request has been processed.",
+  "statusPending": "Pending",
+  "statusApproved": "Approved",
+  "statusRejected": "Rejected",
+  "validationMessage": "Your motivation text must be at least 50 characters long"
+
+
+ 
+
+
+  
+  
 }
 
   

@@ -9,7 +9,7 @@ const Footer = () => {
        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Logo and description */}
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-primary">EduPlateforme</h2>
+            <h2 className="text-2xl font-bold text-primary">Madrassa</h2>
             <p className="text-muted-foreground">
               Votre partenaire dans l'apprentissage en ligne, offrant des cours de qualité pour tous les niveaux.
             </p>
@@ -66,7 +66,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li className="flex items-center gap-2 text-muted-foreground">
                 <Mail size={16} />
-                <span>contact@eduplateforme.fr</span>
+                <span>contact@Madrassa.ma</span>
               </li>
               <li className="flex items-center gap-2 text-muted-foreground">
                 <Phone size={16} />
@@ -80,7 +80,7 @@ const Footer = () => {
        <div className="border-t border-border mt-8 pt-8 flex justify-center items-center text-sm text-muted-foreground">
           <div className="flex items-center gap-1">
             <Copyright size={16} />
-            <span>{new Date().getFullYear()} EduPlateforme. Tous droits réservés.</span>
+            <span>{new Date().getFullYear()} Madrassa. Tous droits réservés.</span>
           </div>
         </div>
       </div>
